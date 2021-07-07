@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/campaign4/static/css/main.a617e044.chunk.css",
+    "main.js": "/campaign4/static/js/main.05dfbed7.chunk.js",
+    "main.js.map": "/campaign4/static/js/main.05dfbed7.chunk.js.map",
+    "runtime-main.js": "/campaign4/static/js/runtime-main.0ae3d5b6.js",
+    "runtime-main.js.map": "/campaign4/static/js/runtime-main.0ae3d5b6.js.map",
+    "static/js/2.62919478.chunk.js": "/campaign4/static/js/2.62919478.chunk.js",
+    "static/js/2.62919478.chunk.js.map": "/campaign4/static/js/2.62919478.chunk.js.map",
+    "static/js/3.dfcb6374.chunk.js": "/campaign4/static/js/3.dfcb6374.chunk.js",
+    "static/js/3.dfcb6374.chunk.js.map": "/campaign4/static/js/3.dfcb6374.chunk.js.map",
+    "index.html": "/campaign4/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/campaign4/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.62919478.chunk.js.LICENSE.txt": "/campaign4/static/js/2.62919478.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ae3d5b6.js",
+    "static/js/2.62919478.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.05dfbed7.chunk.js"
+  ]
+}
