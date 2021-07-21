@@ -1,0 +1,9 @@
+.svgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#resultImage {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
