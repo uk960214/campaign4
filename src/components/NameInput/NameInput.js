@@ -7,7 +7,7 @@ const NameInput = ({ username, onNameChange, onRouteChange }) => {
             <h1 className='f3 lh-title near-white'>
                 이름 또는 닉네임을 <br/> 알려주세요
             </h1>
-            <div className='form center pa4 br3'>
+            <div className='form center pv4 br3'>
                 <input className='f4 pa2 center br3 b--near-white' type='text' autoFocus onChange={onNameChange}/>
             </div>
             <button 

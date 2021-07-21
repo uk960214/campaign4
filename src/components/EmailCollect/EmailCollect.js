@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 class EmailCollect extends React.Component {
     constructor(props) {
         super(props);
@@ -86,7 +84,7 @@ class EmailCollect extends React.Component {
                             </div>
                         </fieldset>
                         <br/>
-                        <button className="link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer" method='post' onClick={(event) => this.onSendButton(event)}>동의 후 계속하기</button>
+                        <button className="link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh3 mv2 pointer" method='post' onClick={(event) => this.onSendButton(event)}>동의 후 계속하기</button>
                     </form>
                     </main>
             </div>
