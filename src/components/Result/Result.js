@@ -1,6 +1,9 @@
 import React from 'react';
 import './Result.css';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 const saveSvgAsPng = require('save-svg-as-png')
+
 
 class Result extends React.Component {
     constructor(props) {
@@ -14,12 +17,15 @@ class Result extends React.Component {
     }
 
     render() {
-        const {username, colors} = this.props
+        const {username, colors} = this.props;
+        const hashtags = "#주4일제 #주4일제_원기옥모으기 #주4일제_왜안돼";
         return (
             <div className='content-area'>
-                <h1 className='f2 lh-title near-white'>
-                    SNS에 공유해 <br/> 함께 원기옥을 <br/> 모아요!
+                <h1 className='f3 lh-title near-white'>
+                    SNS에 공유해 함께 <br/> 원기옥을 모아요!
                 </h1>
+                <textarea className='near-white pa2' id="hashtags" readOnly value={hashtags}></textarea>
+                <br />
                 <section className='svgContainer'>
                     <svg ref={this.svgRef} id='resultImage' width="300" height="300" viewBox='0 0 1080 1080' fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0)">
@@ -90,15 +96,19 @@ class Result extends React.Component {
                 </svg>
                 </section>
                 <br/>
+                <CopyToClipboard text={hashtags}>
+                    <button 
+                        className='nextButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer' 
+                        onClick={() => this.onDownloadClick()}
+                    > 
+                        다운로드 &amp; 복사
+                    </button>
+                </CopyToClipboard>
                 <button 
-                className='nextButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer' 
-                onClick={() => this.onDownloadClick()}> 
-                다운로드
-                </button>
-                <button 
-                className='reloadButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer' 
-                onClick={() => {window.location.reload();}}> 
-                다시 만들기
+                    className='reloadButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer' 
+                    onClick={() => {window.location.reload();}}
+                > 
+                    다시 만들기
                 </button>
             </div>
         )
