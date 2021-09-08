@@ -1,61 +1,54 @@
-import './App.css';
-import React, { Component } from 'react';
-import FrontPage from './components/FrontPage/FrontPage';
-import NameInput from './components/NameInput/NameInput';
-import ColorInput from './components/ColorInput/ColorInput';
-import Result from './components/Result/Result';
-import EmailCollect from './components/EmailCollect/EmailCollect';
+import React, { useState } from "react";
+import FrontPage from "./components/FrontPage/FrontPage";
+import NameInput from "./components/NameInput/NameInput";
+import ColorInput from "./components/ColorInput/ColorInput";
+import Result from "./components/Result/Result";
+import EmailCollect from "./components/EmailCollect/EmailCollect";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      nameInput: '',
-      colors: ['#b6f4f4', '#d2f3f2', '#ffffff'],
-      route: 'start',
-    }
-  }
-  onNameChange = (event) => {
-    this.setState({nameInput: event.target.value});
-  }
+function App() {
+  const [nameInput, setName] = useState("");
+  const [colors, setColors] = useState(["#b6f4f4", "#d2f3f2", "#ffffff"]);
+  const [route, setRoute] = useState("start");
 
-  onColorChange = (event) => {
+  const onNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const onColorChange = (event) => {
     let key = event.target.name * 1;
     let val = event.target.value;
-    this.setState((state) => {
-      let colors = state.colors.map((x, i) => {
-        if (key === i) {
-          return val;
-        } else {
-          return x;
-        }
-      });
-      return { colors, };
-    })
-  }
+    let newColors = [...colors];
+    newColors[key] = val;
+    setColors(newColors);
+  };
 
-  onRouteChange = (route) => {
-    this.setState({route: route});
-  }
+  const onRouteChange = (route) => {
+    setRoute(route);
+  };
 
-  render() {
-    return (
-      <div className="App">
-        { this.state.route === 'start' 
-          ? <FrontPage onRouteChange={this.onRouteChange} />
-          : this.state.route === 'name'
-          ? <NameInput onNameChange={this.onNameChange} onRouteChange={this.onRouteChange} username={this.state.nameInput} />
-          : this.state.route === 'color'
-          ? <ColorInput colors={this.state.colors} onColorChange={this.onColorChange} onRouteChange={this.onRouteChange} />
-          : this.state.route === 'email'
-          ? <EmailCollect onRouteChange={this.onRouteChange} />
-          : <Result username={this.state.nameInput} colors={this.state.colors} />
-        }
-      </div>
-    );
-  }
-  
+  return (
+    <div className="App tc">
+      {route === "start" ? (
+        <FrontPage onRouteChange={onRouteChange} />
+      ) : route === "name" ? (
+        <NameInput
+          onNameChange={onNameChange}
+          onRouteChange={onRouteChange}
+          username={nameInput}
+        />
+      ) : route === "color" ? (
+        <ColorInput
+          colors={colors}
+          onColorChange={onColorChange}
+          onRouteChange={onRouteChange}
+        />
+      ) : route === "email" ? (
+        <EmailCollect onRouteChange={onRouteChange} />
+      ) : (
+        <Result username={nameInput} colors={colors} />
+      )}
+    </div>
+  );
 }
 
 export default App;
-

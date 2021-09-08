@@ -1,20 +1,9 @@
-.svgContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 #hashtags {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    resize: none;
-    overflow: auto;
-    border-radius: 3px;
-    background-color: #3d3d3d;
-    
+  max-width: 400px;
+  resize: none;
+  background-color: #3d3d3d;
 }
 
 #resultImage {
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
 }
