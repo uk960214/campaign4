@@ -34,6 +34,7 @@ function Result({ username, colors }) {
           viewBox="0 0 1080 1080"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="shadow-3"
         >
           <g clipPath="url(#clip0)">
             <rect width="1080" height="1080" fill="#5E2CA5" />
@@ -246,14 +247,14 @@ function Result({ username, colors }) {
       <br />
       <CopyToClipboard text={hashtags}>
         <button
-          className="nextButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer"
+          className="nextButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer shadow-3"
           onClick={() => onDownloadClick()}
         >
           다운로드 &amp; 복사
         </button>
       </CopyToClipboard>
       <button
-        className="reloadButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer"
+        className="reloadButton link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh4 mv2 pointer shadow-3"
         onClick={() => {
           window.location.reload();
         }}

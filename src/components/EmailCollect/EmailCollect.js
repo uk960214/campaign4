@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ResetButton from "../ResetButton";
 
 function EmailCollect({ onRouteChange }) {
   const [name, setName] = useState("");
@@ -45,6 +46,7 @@ function EmailCollect({ onRouteChange }) {
   return (
     <div className="content-area">
       <main className="pa4">
+        <ResetButton />
         <form className="measure center">
           <fieldset id="mail-collect" className="ba b--transparent ph0 mh0">
             <h1 className="f3 lh-title near-white">개인정보 수집 동의</h1>
@@ -102,7 +104,7 @@ function EmailCollect({ onRouteChange }) {
             ></textarea>
           </section>
           <button
-            className="link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh3 mv2 pointer"
+            className="link ba b--silver br-pill bg-near-white grow dib black ph4 pv2 mh3 mv2 pointer shadow-3"
             method="post"
             onClick={(event) => onSendButton(event)}
           >
